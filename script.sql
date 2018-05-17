@@ -88,32 +88,16 @@ CREATE TABLE anuncio (
   PRIMARY KEY (idAnuncio)
 )
 
-CREATE TABLE transacao (
-  idTransacao INT NOT NULL AUTO_INCREMENT,
-  idUsuario INT NOT NULL,
-  idPrestador INT NOT NULL,
-  valor DECIMAL(15,2),
-  FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
-  FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
-  PRIMARY KEY (idTransacao)
-)
-
 CREATE TABLE pedido (
   idPedido INT NOT NULL AUTO_INCREMENT,
   confirmadoPedido BIT NOT NULL,
+  statusPedido VARCHAR(50) NOT NULL,
   idUsuario INT NOT NULL,
-  statusUsuario VARCHAR(50) NOT NULL,
   idPrestador INT NOT NULL,
+  idServico INT NOT NULL,
+  valor DECIMAL(15,2),
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
-  PRIMARY KEY (idPedido)
-)
-
-CREATE TABLE itemPedido (
-  idItemPedido INT NOT NULL AUTO_INCREMENT,
-  idPedido INT NOT NULL,
-  idServico INT NOT NULL,
-  FOREIGN KEY (idPedido) REFERENCES pedido(idPedido),
   FOREIGN KEY (idServico) REFERENCES servico(idServico),
-  PRIMARY KEY (idItemPedido)
+  PRIMARY KEY (idPedido)
 )
