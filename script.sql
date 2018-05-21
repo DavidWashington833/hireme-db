@@ -19,8 +19,8 @@ CREATE TABLE endereco (
   complementoEndereco VARCHAR(50) NOT NULL,
   estadoEndereco VARCHAR(50) NOT NULL,
   cidadeEndereco VARCHAR(50) NOT NULL,
-  latitudeEndereco BIGINT NOT NULL,
-  longitudeEndereco BIGINT NOT NULL,
+  latitudeEndereco VARCHAR(50) NOT NULL,
+  longitudeEndereco VARCHAR(50) NOT NULL,
   numeroEndereco INT NOT NULL,
   CEPEndereco INT NOT NULL,
   idUsuario INT NOT NULL,
@@ -32,15 +32,14 @@ CREATE TABLE dadosBancario (
   idDadosBancario INT NOT NULL AUTO_INCREMENT,
   contaDadosBancario INT NOT NULL,
   agenciaDadosBancario INT NOT NULL,
-  tipoDocumentoDadosBancario VARCHAR(4),
   documentoDadosBancario INT NOT NULL,
   PRIMARY KEY (idDadosBancario)
 )
 
 CREATE TABLE prestador (
   idPrestador INT NOT NULL AUTO_INCREMENT,
-  latitudePrestador BIGINT,
-  longitudePrestador BIGINT,
+  latitudePrestador VARCHAR(50) NOT NULL,
+  longitudePrestador VARCHAR(50) NOT NULL,
   idUsuario INT NOT NULL,
   idEndereco INT NOT NULL,
   idDadosBancario INT NOT NULL,
