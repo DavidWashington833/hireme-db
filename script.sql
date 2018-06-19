@@ -32,7 +32,7 @@ CREATE TABLE dadosBancario (
   idDadosBancario INT NOT NULL AUTO_INCREMENT,
   contaDadosBancario INT NOT NULL,
   agenciaDadosBancario INT NOT NULL,
-  documentoDadosBancario INT NOT NULL,
+  documentoDadosBancario BIGINT NOT NULL,
   PRIMARY KEY (idDadosBancario)
 )
 
