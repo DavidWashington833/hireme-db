@@ -1,3 +1,3 @@
-# pi-5-db
+# hireme-db
 
 ![diagram](./diagrama.PNG)
